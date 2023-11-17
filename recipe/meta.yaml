@@ -12,7 +12,7 @@ source:
   git_rev: "{{ version }}"
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   missing_dso_whitelist:
     # From libprocname, which is shipped as part of Presto

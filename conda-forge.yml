@@ -3,4 +3,5 @@ github:
   tooling_branch_name: main
 conda_build:
   error_overlinking: true
+  zstd_compression_level: 22
 conda_forge_output_validation: true
