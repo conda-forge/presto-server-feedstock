@@ -14,7 +14,7 @@ build:
   number: 0
   noarch: generic
   script:
-    - sed -i'' -e 's@<module>presto-docs</module>@@g' pom.xml && ./mvnw clean install -DskipTests
+    - sed -i'' -e 's@<module>presto-docs</module>@@g' pom.xml && ./mvnw clean install -DskipTests -T$CPU_COUNT
     - ./mvnw org.codehaus.mojo:license-maven-plugin:aggregate-add-third-party
     - mv presto-server/target/presto-server-*/presto-server-* $PREFIX/opt/presto-server
     - echo "exec \"$PREFIX/opt/presto-server/bin/launcher\" \"\$@\"" > $PREFIX/bin/presto-server && chmod +x $PREFIX/bin/presto-server
